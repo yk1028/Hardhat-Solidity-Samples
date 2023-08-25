@@ -5,6 +5,7 @@ import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 import "@openzeppelin/contracts/utils/math/SafeMath.sol";
 
+import "hardhat/console.sol";
 
 // SushiToken with Governance.
 contract SushiToken is ERC20("SushiToken", "SUSHI"), Ownable {
@@ -13,10 +14,16 @@ contract SushiToken is ERC20("SushiToken", "SUSHI"), Ownable {
 
     /// @notice Creates `_amount` token to `_to`. Must only be called by the owner (MasterChef).
     function mint(address _to, uint256 _amount) public onlyOwner {
+        console.log(
+            "Mint to %s %s tokens",
+            _to,
+            _amount
+        );
+
         _mint(_to, _amount);
         _moveDelegates(address(0), _delegates[_to], _amount);
     }
-
+    
     // Copied and modified from YAM code:
     // https://github.com/yam-finance/yam-protocol/blob/master/contracts/token/YAMGovernanceStorage.sol
     // https://github.com/yam-finance/yam-protocol/blob/master/contracts/token/YAMGovernance.sol
@@ -241,7 +248,7 @@ contract SushiToken is ERC20("SushiToken", "SUSHI"), Ownable {
         return uint32(n);
     }
 
-    function getChainId() internal pure returns (uint) {
+    function getChainId() internal view returns (uint) {
         uint256 chainId;
         assembly { chainId := chainid() }
         return chainId;

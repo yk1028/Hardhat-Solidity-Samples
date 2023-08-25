@@ -37,8 +37,8 @@
       ]
     },
     "C:\\Users\\USER\\Dev\\Com2us\\hardhat-tutorial\\contracts\\masterchef\\SushiToken.sol": {
-      "lastModificationDate": 1692926121952,
-      "contentHash": "0e5213fa54aae96250de21181a1ef399",
+      "lastModificationDate": 1692927949134,
+      "contentHash": "381597e3202192aaf2aeea86a621721e",
       "sourceName": "contracts/masterchef/SushiToken.sol",
       "solcConfig": {
         "version": "0.8.19",
@@ -66,7 +66,8 @@
       "imports": [
         "@openzeppelin/contracts/token/ERC20/ERC20.sol",
         "@openzeppelin/contracts/access/Ownable.sol",
-        "@openzeppelin/contracts/utils/math/SafeMath.sol"
+        "@openzeppelin/contracts/utils/math/SafeMath.sol",
+        "hardhat/console.sol"
       ],
       "versionPragmas": [
         "0.8.19"
@@ -291,6 +292,41 @@
       ],
       "artifacts": [
         "IERC20Metadata"
+      ]
+    },
+    "C:\\Users\\USER\\Dev\\Com2us\\hardhat-tutorial\\node_modules\\hardhat\\console.sol": {
+      "lastModificationDate": 1692842365857,
+      "contentHash": "896f68942c3a20e9ae3c3c5bfd3add54",
+      "sourceName": "hardhat/console.sol",
+      "solcConfig": {
+        "version": "0.8.19",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.4.22 <0.9.0"
+      ],
+      "artifacts": [
+        "console"
       ]
     }
   }
